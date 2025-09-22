@@ -1,88 +1,121 @@
-﻿namespace laba_4
+﻿using System;
+using System.Data;
+using System.Xml.Linq;
+namespace laba_4
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            //int[] numbs = [1, 2, 3, 4, 5];
-            //int[] numbs2 = { 1, 2, 3, 4, 5 };
-            //foreach(int c in numbs)
-            //{
-            //    Console.WriteLine(c);
-            //}
-            //for (int i = 0; i < numbs.Length; i++)
-            //{
-            //    Console.WriteLine(numbs[i]);
-            //}
-            //dynamic[] text = [1, 2, "Anton"];
-            //object[] text2 = [1, 2, "Anton"];
+            //Задание 1
 
-            //List<string> people = ["Denis", "Anton", "Bogdan"];
-            //List<string> people2 = new List<string> { "Denis", "Anton", "Bogdan" };
-            //people.Add("Dima");
-            //people.Insert(1, "Kirill");
-            //people.Remove("Bogdan");
-            //people.RemoveAt(1);
-            //people.Clear();
-            //Console.WriteLine(people.Count);
-            //int[] numbers = [-1, 34, 235, 123, 53, 25, 236, -23, -52, -612, 234234];
-            //int result = 0;
-            //foreach (int number in numbers)
+            //string[] strings = { "sword", "shield", "potion", "sword", "potion", "potion" };
+
+            //Задание 2
+
+            //int[] points = {25,23,1,2,4,30,45,10 };
+            //int res = 0;
+            //for (int i = 0; i < points.Length; i++)
             //{
-            //    if (number > 0)
-            //        result++;
+            //    res += points[i]; 
             //}
-            //Console.WriteLine($"Число элементов больше нуля: {result}");
-            //for(int i = 0; i < numbers.Length;)
+            //Console.WriteLine(res);
+
+            //Задание 3
+            //int[] nums = { 25, 23, 51, 2, 14, 30, 45, 10 };
+            //int max_res = nums[0];
+            //for (int i = 1; i < nums.Length; i++)
             //{
-            //    if (i > 0)
+            //    if (nums[i] > max_res)
             //    {
-            //        i++;
-            //    }
-            //}
-            //int k = 0;
-            //while (k < numbers.Length)
-            //{
-            //    if (k > 0) {
-            //        k++;
-            //    }
+            //        max_res = nums[i];
 
+            //    }
             //}
-            //int[] numbers = [-1, 34, 235, 123, 53, 25, 236, -23, -52, -612, 234234];
-            //int n = numbers.Length;
-            //int k = n / 2;
-            //int temp;
-            //for(int i =0;i < k;i++)
+            //Console.WriteLine(max_res);
+
+            //Задание 4
+            //int[] nums = { 25, 23, 51, 2, 14, 30, 45, 10 };
+            //int chet = 0;
+            //int nechet = 0;
+            //for (int i = 0; i < nums.Length; i++)
             //{
-            //    temp = numbers[i];
-            //    numbers[i] = numbers[n - i - 1];
-            //    numbers[n - i - 1] = temp;
-            //}
-            //foreach(int i in numbers)
-            //{
-            //    Console.WriteLine($"{i}\t");
-            //}
-            //int[] nums = [54, 2, 523, -5, 235, 235, 2, 34, 25, -22134, 2];
-            //int temp;
-            //for(int i = 0;i < nums.Length - 1;i++)
-            //{
-            //    for(int j = i+1; j < nums.Length; j++)
+            //    if (nums[i] % 2 == 0)
             //    {
-            //        if (nums[i] > nums[j])
-            //        {
-            //            temp = nums[i];
-            //            nums[i] = nums[j];
-            //            nums[j] = temp;
-            //        }
+            //        chet++;
+
+            //    }
+            //    else
+            //    {
+            //        nechet++;
             //    }
             //}
-            //Console.WriteLine("Вывод отсортированого массива");
-            //for(int i = 0; i < nums.Length; i++)
+            //Console.WriteLine($"результат: {chet} четных и {nechet} нечетных");
+
+            //Задание 5
+            //int[] nums = { 25, 23, 51, 2, 14, 30, 45, 10, 1};
+            //int min_res = nums[0];
+            //for (int i = 1; i < nums.Length; i++)
             //{
-            //    Console.WriteLine(nums[i]);
+            //    if (nums[i] < min_res)
+            //    {
+            //        min_res = nums[i];
+
+            //    }
+            //}
+            //Console.WriteLine(min_res);
+
+            //Задание 6
+            //string[] nums = {"win","loss","win","win", "loss", "win", "loss", "loss", "win" };
+            //int winCount = 0;
+            //int lossCount = 0;
+            //for (int i = 0; i < nums.Length; i++)
+            //{
+            //    if (nums[i] == "win")
+            //    {
+            //        winCount++;
+
+            //    }
+            //    else
+            //    {
+            //        lossCount++;
+            //    }
+            //}
+            //Console.WriteLine($"результат: {winCount} побед и {lossCount} поражений");
+
+            //Задание 7
+            //int[] points = { 25, 23, 25, 35, 24, 30, 45, 20 };
+            //int res = 0;
+            //for (int i = 0; i < points.Length; i++)
+            //{
+            //    res += points[i];
+            //}
+            //Console.WriteLine(res/points.Length);
+
+            //Задание 8
+            //string[] inv = { "Меч", "Ласточка", "Бомба", "Зелье Гром", "Ласточка" };
+            //for (int i = 0; i < inv.Length; i++)
+            //{
+            //    if (inv[i] == "Ласточка")
+            //    {
+            //        inv[i] = "Кошка";
+            //    }
+            //}
+            //foreach (string item in inv)
+            //{
+            //    Console.WriteLine(item);
             //}
 
+            //Задание 9
+            //string[] names = { "Garrus", "Tali", "Mordin", "Grunt", "Jack" };
+            //string[] roles = { "Лидер команды", "Техник", "Биотик", "Солдат", "Поддержка" };
+            //for (int i = 0; i < names.Length; i++)
+            //{
+            //    Console.WriteLine($"{roles[i]}: {names[i]}");
+            //}
 
+            
         }
+
     }
 }
